@@ -1,0 +1,24 @@
+<?php require 'templates/layout/header.phtml' ?>
+
+<?php require 'templates/form_alta.phtml' ?>
+
+<ul class="list-group">
+            <?php foreach($payments as $payment) { ?>
+                <li>
+                    <div class="label">
+                        <b>ID: </b><?= $payment->ID ?><br>
+                        <b>Deudor: </b><?= $payment->deudor ?><br> 
+                        <b>Cuota: </b><?= $payment->cuota ?><br>
+                        <b>Cuota capital: </b><?= $payment->cuota_capital ?><br>
+                        <b>Fecha de pago: </b><?= $payment->fecha_pago ?>
+
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-sm btn-danger" href="eliminar/<?= $payment->id ?>">ELIMINAR</a>
+                    </div>
+                </li>
+            <?php } ?>
+</ul>
+
+<?php require 'templates/layout/footer.phtml' ?>
+
